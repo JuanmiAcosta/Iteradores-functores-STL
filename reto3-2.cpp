@@ -4,7 +4,26 @@
 #include <vector>
 #include <algorithm>
 
+/**
+* @file reto3-2.cpp
+* @Author Juan Miguel Acosta Ortega y Luis Soto Torres
+* @date 18/11/2022
+* @brief Reto 3.2 
+*/
+
 using namespace std;
+
+/**
+      @brief 
+	  @param <em>datos</em> 
+      @param <em>tope</em> 
+      @param <em>base</em>
+      @param <em>numPila</em>
+      @param <em>num</em>
+      @pre 
+      @post 
+      @return 
+*/
 
 void push(vector<stack<int>> &datos,stack<int *> &tope,stack<int *> &base,int numPila, int num){
     stack<int *> aux,aux2;
@@ -48,6 +67,16 @@ void push(vector<stack<int>> &datos,stack<int *> &tope,stack<int *> &base,int nu
 
 }
 
+/**
+      @brief 
+	  @param <em>datos</em> 
+      @param <em>tope</em> 
+      @param <em>base</em>
+      @param <em>numPila</em>
+      @pre 
+      @post 
+      @return 
+*/
 
 void pop(vector<stack<int>> &datos,stack<int *> &tope,stack<int *> &base,int numPila){
     stack<int *> aux,aux2;
@@ -93,11 +122,22 @@ void pop(vector<stack<int>> &datos,stack<int *> &tope,stack<int *> &base,int num
 
     
 }
+
+/**
+      @brief Método creado para mostrar la información del vector de pilas de enteros.
+	  @param <em>datos</em> 
+      @param <em>tope</em> 
+      @param <em>base</em>
+      @pre 
+      @post 
+      @return 
+*/
+
 void mostrarInfo(vector<stack<int>> &datos,stack<int *> &tope,stack<int *> &base){
 vector<stack<int>> datos2=datos;
 stack<int *> tope2=tope;
 stack<int *> base2=base;
-//MOSTRAR TODA LA INFORMACIÃ“N
+//MOSTRAR TODA LA INFORMACIÓN
     int numAux = datos2.size();    
     cout << "Base :\t";
     for (int j = 0; j < numAux; j++)
@@ -132,6 +172,14 @@ stack<int *> base2=base;
 
     
 }
+
+/**
+      @brief Sobrecarga del operador de salida para mostrar las pilas según su top por la salida estándar.
+	  @param <em>flujo</em> es el flujo del operador de salida.
+      @param <em>pila</em> la pìla de la que se "extraerá" el top.
+      @return Devuelve por referencia el flujo del operador de salida.
+*/
+
 ostream &operator<<(ostream &flujo, const stack<int> &pila)
 { // Sobrecargamos el operador "<<" para que muestre solo el top de las pilas de enteros de la lista
 
@@ -139,6 +187,10 @@ ostream &operator<<(ostream &flujo, const stack<int> &pila)
 
     return flujo;
 }
+
+/**
+      @brief En el main se crean las pilas necesarias para el ejemplo, y además la pila base y la pila tope. Se hace uso de los métodos implementados.
+*/
 
 int main()
 {
@@ -151,7 +203,7 @@ int main()
     vector<stack<int>> datos(tam);
     stack<int> aux;
     //CREO 3 PILAS CON LOS SIGUIENTES VALORES: 0 1 2
-    //CREO TAMBIÃ‰N LA PILA BASE Y TOPE Y ASIGNO LOS VALORES CORRESPONDIENTES: 0 0 0 Y 2 2 2 PARA UNA MAYOR FACILIDAD DE LECTURA
+    //CREO TAMBIÉN LA PILA BASE Y TOPE Y ASIGNO LOS VALORES CORRESPONDIENTES: 0 0 0 Y 2 2 2 PARA UNA MAYOR FACILIDAD DE LECTURA
     for (int j = 0; j < tam; j++)
     {
 
@@ -195,20 +247,5 @@ int main()
     push(datos,tope,base,1,6);
     push(datos,tope,base,2,7);
     mostrarInfo(datos,tope,base);
-
-
-    
-
-    
-    
-
-
-
-
-
-
-
-
-
 
 }
