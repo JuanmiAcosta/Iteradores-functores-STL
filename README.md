@@ -12,6 +12,3 @@ Ejercicios sobre estructuras de datos lineales de la stl, e iniciación a iterad
 1. Clona el repositorio
 2. Instala las dependencias
 3. Ejecuta el proyecto
-
-
-
